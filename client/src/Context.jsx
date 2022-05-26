@@ -1,17 +1,20 @@
-import { useEffect, useContext, React } from 'react';
+import React, { useEffect, useContext, createContext } from 'react';
 import App from './components/App';
 
 
-// export React.createContext()
+const MovieContext = createContext({data: 'datas'});
+export const useData = () => useContext(MovieContext);
 
-export default Context = function() {
 
-    const value = {};
-    return (
+export default function Context() {
+
+  const value = {data: 'Data from Context component'};
+  return (
     <>
-        <Provider value={value}>
-            <App />
-        </Provider>
+      <h1>My Context</h1>
+      <MovieContext.Provider value={value}>
+        <App />
+      </MovieContext.Provider>
     </>
-    );
+  );
 };
