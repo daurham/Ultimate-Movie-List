@@ -16,5 +16,4 @@ app.delete('/movies', ctlr.deleteData);
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.listen(PORT, () => console.log('Listening to port ' + PORT + ' @ http://localhost:' + PORT));
-// console.log(process.env)
+app.listen(PORT, () => console.log(`Listening to http://localhost:${PORT}`));
